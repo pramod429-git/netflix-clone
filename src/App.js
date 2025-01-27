@@ -3,7 +3,7 @@ import Body from "./components/Body";
 
 function App() {
   return (
-    <Provider>
+    <Provider store={appStore}>
       <Body />
     </Provider>
   );
