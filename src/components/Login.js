@@ -4,18 +4,22 @@ import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import { NETFLIX_USER_LOGO } from "../utils/constants";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMessage, setErroMessage] = useState(null);
-  const navigate = useNavigate();
+  const dispath = useDispatch();
   //   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-
+  const name = useRef();
+  console.log("login loaded");
   const onToggleForm = () => {
     return setIsSignIn(!isSignIn);
   };
@@ -23,7 +27,8 @@ const Login = () => {
     const message = checkValidData(
       //   name.current?.value, //facing issue because when we click button sigin, name field empty called so occure error so no validation for name
       email.current?.value,
-      password.current?.value
+      password.current?.value,
+      name.current?.value
     );
     // console.log(name.current.value);
     console.log(email.current.value);
@@ -34,16 +39,36 @@ const Login = () => {
     if (message) return;
     if (!isSignIn) {
       createUserWithEmailAndPassword(
+        //create user in fire base
         auth,
         email.current.value,
         password.current.value
       )
         .then((userCredential) => {
           // Signed up
-          const user = userCredential.user;
+          const user = userCredential.user; //return the user from firebase
           console.log(user);
           // ...
-          navigate("/");
+          updateProfile(user, {
+            displayName: name.current?.value,
+            photoURL: NETFLIX_USER_LOGO,
+          })
+            .then(() => {
+              //here we are updating our store once again with new value since displayName photoURL receiving null
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispath(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+            })
+            .catch((error) => {
+              // An error occurred
+              // ...
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -62,7 +87,6 @@ const Login = () => {
           const user = userCredential.user;
           console.log(user);
           // ...
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -91,7 +115,7 @@ const Login = () => {
         </h1>
         {!isSignIn && (
           <input
-            // ref={name}
+            ref={name}
             type="text"
             placeholder="Full name"
             className="p-4 my-4 w-full rounded-lg bg-gray-800"
@@ -124,7 +148,7 @@ const Login = () => {
           <span className="cursor-none text-gray-500">Already registerd? </span>
         )}
         <span className="hover:underline cursor-pointer" onClick={onToggleForm}>
-          {isSignIn ? "Sign up now" : "Signed in now"}
+          {isSignIn ? "Sign up now" : "Sign in now"}
         </span>
       </form>
     </div>
