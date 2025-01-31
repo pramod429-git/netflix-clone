@@ -1,0 +1,87 @@
+[debug] [2025-01-30T07:35:37.459Z] ----------------------------------------------------------------------
+[debug] [2025-01-30T07:35:37.463Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Pramod\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2025-01-30T07:35:37.464Z] CLI Version:   13.29.2
+[debug] [2025-01-30T07:35:37.464Z] Platform:      win32
+[debug] [2025-01-30T07:35:37.464Z] Node Version:  v20.3.1
+[debug] [2025-01-30T07:35:37.464Z] Time:          Thu Jan 30 2025 13:05:37 GMT+0530 (India Standard Time)
+[debug] [2025-01-30T07:35:37.464Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-30T07:35:37.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-30T07:35:37.650Z] > authorizing via signed-in user (18kppramod@gmail.com)
+[debug] [2025-01-30T07:35:37.650Z] [iam] checking project netflixclone-5cd5c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-30T07:35:37.651Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:37.651Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:37.652Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixclone-5cd5c:testIamPermissions [none]
+[debug] [2025-01-30T07:35:37.653Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixclone-5cd5c:testIamPermissions x-goog-quota-user=projects/netflixclone-5cd5c
+[debug] [2025-01-30T07:35:37.653Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixclone-5cd5c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-30T07:35:38.993Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixclone-5cd5c:testIamPermissions 200
+[debug] [2025-01-30T07:35:38.994Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixclone-5cd5c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-30T07:35:38.995Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:38.996Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:38.997Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflixclone-5cd5c [none]
+[debug] [2025-01-30T07:35:39.574Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflixclone-5cd5c 200
+[debug] [2025-01-30T07:35:39.575Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflixclone-5cd5c {"projectId":"netflixclone-5cd5c","projectNumber":"529896924841","displayName":"NetflixClone","name":"projects/netflixclone-5cd5c","resources":{"hostingSite":"netflixclone-5cd5c"},"state":"ACTIVE","etag":"1_e30df854-9ad6-414e-8c2d-f0202e686474"}
+[info] 
+[info] === Deploying to 'netflixclone-5cd5c'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-01-30T07:35:39.590Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:39.591Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:39.592Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions [none]
+[debug] [2025-01-30T07:35:39.592Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-01-30T07:35:40.703Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions 200
+[debug] [2025-01-30T07:35:40.705Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions {"name":"projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[netflixclone-5cd5c]: beginning deploy... 
+[info] i  hosting[netflixclone-5cd5c]: found 14 files in build 
+[debug] [2025-01-30T07:35:40.732Z] [hosting] uploading with 200 concurrency
+[debug] [2025-01-30T07:35:40.735Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:40.735Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:40.738Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2025-01-30T07:35:40.739Z] [hosting][hash queue][FINAL] {"max":1,"min":0,"avg":0,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":5}
+[debug] [2025-01-30T07:35:40.741Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b:populateFiles [none]
+[debug] [2025-01-30T07:35:40.741Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b:populateFiles {"files":{"/robots.txt":"b2090cf9761ef60aa06e4fab97679bd43dfa5e5df073701ead5879d7c68f1ec5","/manifest.json":"5c997de1364b8be939319fa9209abd77f2caf7f8844999a9e2e9173f844e7840","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/index.html":"f62b51095707c12704785fe309c73d852bbf00d677494d123d9beaade0d996da","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/asset-manifest.json":"027057ed65b44eb0a1d6d6f2aa36806a24f347c77fecec19b2325540f886cac8","/static/js/main.1ef6dccf.js.map":"e7c6843053af0023a051b20f93d2291499ea1f17f3a01b0d808f7f58d16a36b4","/static/js/main.1ef6dccf.js.LICENSE.txt":"1a2077dd0224b27211ce22017f26bf513f24a972bbe28e625e7e53b8701a0022","/static/js/main.1ef6dccf.js":"ff7993672fdd08860de0eaf9a12f7aeac12c9178466b7deadb8a673ce702adaf","/static/js/156.4f92a2f7.chunk.js.map":"e95530129aeccd55f1fa14a2f676e8b2541ca6d345fb60de000d949c3974eee3","/static/js/156.4f92a2f7.chunk.js":"b3983ad39aa8674657518e4cd20c940f38e20d269cb02f09908bc04a0a00e49a","/static/css/main.2a54ba55.css.map":"0535f9e870a7e0f64c221e4083b626b91ef14f5e6d6c54c49f8eadd42848a4ed","/static/css/main.2a54ba55.css":"1827f561f9105a7398fc688d4d09358f9477f135ae2691f184f485917568ec96"}}
+[debug] [2025-01-30T07:35:41.135Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b:populateFiles 200
+[debug] [2025-01-30T07:35:41.137Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/netflixclone-5cd5c/versions/84b22280c300273b/files"}
+[debug] [2025-01-30T07:35:41.138Z] [hosting][populate queue][FINAL] {"max":403,"min":403,"avg":403,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":403}
+[debug] [2025-01-30T07:35:41.140Z] [hosting] uploads queued: 0
+[debug] [2025-01-30T07:35:41.142Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1738222541142}
+[info] i  hosting: upload complete 
+[info] +  hosting[netflixclone-5cd5c]: file upload complete 
+[debug] [2025-01-30T07:35:41.145Z] [hosting] deploy completed after 434ms
+[debug] [2025-01-30T07:35:41.146Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "netflixclone-5cd5c"
+    },
+    "version": "projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b"
+  }
+]
+[info] i  hosting[netflixclone-5cd5c]: finalizing version... 
+[debug] [2025-01-30T07:35:41.153Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:41.154Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:41.156Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions/84b22280c300273b updateMask=status%2Cconfig
+[debug] [2025-01-30T07:35:41.157Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions/84b22280c300273b {"status":"FINALIZED","config":{}}
+[debug] [2025-01-30T07:35:41.752Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions/84b22280c300273b 200
+[debug] [2025-01-30T07:35:41.753Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/versions/84b22280c300273b {"name":"projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-01-30T07:35:38.514385Z","createUser":{"email":"18kppramod@gmail.com"},"finalizeTime":"2025-01-30T07:35:39.712658Z","finalizeUser":{"email":"18kppramod@gmail.com"}}
+[debug] [2025-01-30T07:35:41.754Z] [hosting] finalized version for netflixclone-5cd5c:[object Object]
+[info] +  hosting[netflixclone-5cd5c]: version finalized 
+[info] i  hosting[netflixclone-5cd5c]: releasing new version... 
+[debug] [2025-01-30T07:35:41.757Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:41.758Z] Checked if tokens are valid: true, expires at: 1738224268533
+[debug] [2025-01-30T07:35:41.758Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/channels/live/releases versionName=projects%2F529896924841%2Fsites%2Fnetflixclone-5cd5c%2Fversions%2F84b22280c300273b
+[debug] [2025-01-30T07:35:41.759Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/channels/live/releases {}
+[debug] [2025-01-30T07:35:42.441Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/channels/live/releases 200
+[debug] [2025-01-30T07:35:42.442Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/netflixclone-5cd5c/channels/live/releases {"name":"projects/529896924841/sites/netflixclone-5cd5c/channels/live/releases/1738222539732000","version":{"name":"projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-01-30T07:35:38.514385Z","createUser":{"email":"18kppramod@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ_7Djvnyn2Njc8Upo7bmOLnOggm_lpIo9s4TnJae_hiCW8wAk"},"finalizeTime":"2025-01-30T07:35:39.712658Z","finalizeUser":{"email":"18kppramod@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ_7Djvnyn2Njc8Upo7bmOLnOggm_lpIo9s4TnJae_hiCW8wAk"}},"type":"DEPLOY","releaseTime":"2025-01-30T07:35:39.732Z","releaseUser":{"email":"18kppramod@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ_7Djvnyn2Njc8Upo7bmOLnOggm_lpIo9s4TnJae_hiCW8wAk"}}
+[debug] [2025-01-30T07:35:42.449Z] [hosting] release: {"name":"projects/529896924841/sites/netflixclone-5cd5c/channels/live/releases/1738222539732000","version":{"name":"projects/529896924841/sites/netflixclone-5cd5c/versions/84b22280c300273b","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-01-30T07:35:38.514385Z","createUser":{"email":"18kppramod@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ_7Djvnyn2Njc8Upo7bmOLnOggm_lpIo9s4TnJae_hiCW8wAk"},"finalizeTime":"2025-01-30T07:35:39.712658Z","finalizeUser":{"email":"18kppramod@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ_7Djvnyn2Njc8Upo7bmOLnOggm_lpIo9s4TnJae_hiCW8wAk"}},"type":"DEPLOY","releaseTime":"2025-01-30T07:35:39.732Z","releaseUser":{"email":"18kppramod@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ_7Djvnyn2Njc8Upo7bmOLnOggm_lpIo9s4TnJae_hiCW8wAk"}}
+[info] +  hosting[netflixclone-5cd5c]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/netflixclone-5cd5c/overview
+[info] Hosting URL: https://netflixclone-5cd5c.web.app
