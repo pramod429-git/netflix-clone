@@ -135,7 +135,7 @@ const Login = () => {
         />
         <button
           type="submit"
-          className="bg-red-700 p-4 my-8 w-full rounded-lg"
+          className="bg-red-700 p-4 my-8 w-full rounded-lg transition-transform duration-300 ease-in-out hover:scale-110 group-hover:shadow-2xl"
           onClick={handleButtonClick}
         >
           {isSignIn ? "Sign In" : "Sign Up"}

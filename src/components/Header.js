@@ -47,19 +47,21 @@ const Header = () => {
   // return () => unsubscribe(); // it will called when component is unmount from the dom
 
   return (
-    <div className="absolute py-2 px-48 z-10 bg-gradient-to-b from-black w-screen flex justify-between">
-      <img className="w-52 " src={NETFLIX_LOGO} alt="logo" />
-      {user && (
-        <div className="flex mt-6">
-          <img alt="user Icon" className="w-10 h-10 " src={user?.photoURL} />
-          <button
-            className="bg-opacity-80 text-white rounded-lg ml-2 p-2 h-10 hover:bg-red-700 hover: transition duration-300 ease-in-out "
-            onClick={handleSignOut}
-          >
-            Sign Out
-          </button>
-        </div>
-      )}
+    <div className="fixed z-30">
+      <div className="absolute py-2 px-48 z-10 bg-gradient-to-b from-black w-screen flex justify-between">
+        <img className="w-52 " src={NETFLIX_LOGO} alt="logo" />
+        {user && (
+          <div className="flex mt-6">
+            <img alt="user Icon" className="w-10 h-10 " src={user?.photoURL} />
+            <button
+              className="bg-opacity-80 text-white rounded-lg ml-2 p-2 h-10 hover:bg-red-700 transition-transform duration-300 ease-in-out hover:scale-110 group-hover:shadow-2xl  "
+              onClick={handleSignOut}
+            >
+              Sign Out
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
