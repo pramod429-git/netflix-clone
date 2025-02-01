@@ -6,6 +6,15 @@ export const NETFLIX_USER_LOGO =
 
 export const MainMurl = "https://api.themoviedb.org/3/movie/now_playing?page=1";
 
+export const PopularMovieUrl =
+  "https://api.themoviedb.org/3/movie/popular?page=1";
+
+export const TopRatedMovieUrl =
+  "https://api.themoviedb.org/3/movie/top_rated?page=1";
+
+export const upcomingMovieUrl =
+  "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+
 export const GET_OPTIONS = {
   method: "GET",
   headers: {
@@ -14,3 +23,5 @@ export const GET_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OWMwOTIxZTlhMTk0MjliYzBmMzE1MzNmYWFlZWI0NyIsIm5iZiI6MTczODIxOTA5NC42MSwic3ViIjoiNjc5YjFlNTZjMzU3MjE4ODVhMzQ0ZWU4Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.JYHi8-yarL6LD4XTiLwSGFX93XGTd42dzwIsds39V9A",
   },
 };
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w200/";
