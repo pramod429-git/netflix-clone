@@ -4,6 +4,9 @@ export const NETFLIX_LOGO =
 export const NETFLIX_USER_LOGO =
   "https://i.pinimg.com/736x/91/86/1b/91861b749841221d52122f0c2933d8a6.jpg";
 
+export const BG_LOGO_Url =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/7a8c0067-a424-4e04-85f8-9e25a49a86ed/web/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_small.jpg";
+
 export const MainMurl = "https://api.themoviedb.org/3/movie/now_playing?page=1";
 
 export const PopularMovieUrl =
@@ -25,3 +28,9 @@ export const GET_OPTIONS = {
 };
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w200/";
+
+export const SUPPORTED_LANGUAGE = [
+  { identifier: "english", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "kannada", name: "Kannada" },
+];
