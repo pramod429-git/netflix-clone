@@ -26,7 +26,7 @@ const SecondaryContainerMovie = () => {
           movies={movies?.UpcomingMovie || []} //added [] because initailly store(NowPlayingMovie) was not having value
         />
         <MoviesList
-          title={"Crime-Thriller"}
+          title={"Hollywood-Thrillers"}
           movies={movies?.NowPlayingMovie || []} //added [] because initailly store(NowPlayingMovie) was not having value
         />
       </div>

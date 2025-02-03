@@ -4,11 +4,14 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { NETFLIX_LOGO } from "../utils/constants";
+import { NETFLIX_LOGO, SUPPORTED_LANGUAGE } from "../utils/constants";
+import { showSearchPage } from "../utils/gptSearchSlice";
+import { changeLanguage } from "../utils/languageGptSearchSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const showLang = useSelector((store) => store.gptSearch.toggleSearch);
   const dispatch = useDispatch();
   const handleSignOut = () => {
     signOut(auth)
@@ -44,7 +47,13 @@ const Header = () => {
     console.log({ unsubscribe });
     return () => unsubscribe();
   }, []);
+  const handleGptSearch = () => {
+    dispatch(showSearchPage());
+  };
   // return () => unsubscribe(); // it will called when component is unmount from the dom
+  const handleGptSearchLang = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  };
 
   return (
     <div className="fixed z-30">
@@ -52,9 +61,29 @@ const Header = () => {
         <img className="w-52 " src={NETFLIX_LOGO} alt="logo" />
         {user && (
           <div className="flex mt-6">
+            {showLang && (
+              <select
+                className="mr-5 p-2 h-10 bg-gray-800 text-white rounded-lg"
+                onChange={handleGptSearchLang}
+              >
+                {SUPPORTED_LANGUAGE.map((lang) => {
+                  return (
+                    <option key={lang.identifier} value={lang.identifier}>
+                      {lang.name}
+                    </option>
+                  );
+                })}
+              </select>
+            )}
+            <button
+              className="text-white bg-red-700 py-2 px-2 mr-5 h-10 rounded-lg hover:scale-110 group-hover:shadow-2xl transition-transform duration-300 ease-in-out"
+              onClick={handleGptSearch}
+            >
+              {showLang ? "Home" : "GTP Search For Movie Recommendation"}
+            </button>
             <img alt="user Icon" className="w-10 h-10 " src={user?.photoURL} />
             <button
-              className="bg-opacity-80 text-white rounded-lg ml-2 p-2 h-10 hover:bg-red-700 transition-transform duration-300 ease-in-out hover:scale-110 group-hover:shadow-2xl  "
+              className=" text-white rounded-lg ml-2 p-2 h-10 hover:bg-red-700 transition-transform duration-300 ease-in-out hover:scale-110 group-hover:shadow-2xl  "
               onClick={handleSignOut}
             >
               Sign Out
