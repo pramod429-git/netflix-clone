@@ -7,7 +7,7 @@ const GPTSearch = () => {
   console.log("gpt page");
   return (
     <div>
-      <div className="absolute -z-10">
+      <div className="fixed -z-10">
         <img src={BG_LOGO_Url} alt="logo" />
       </div>
       <GptSearchBar />

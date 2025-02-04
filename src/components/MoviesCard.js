@@ -2,6 +2,7 @@ import React from "react";
 import { IMG_CDN_URL } from "../utils/constants";
 
 const MoviesCard = ({ posterPath }) => {
+  if (!posterPath) return null;
   return (
     <div className="w-56 px-2 relative group cursor-pointer ">
       <img
