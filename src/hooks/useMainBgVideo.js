@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GET_OPTIONS } from "../utils/constants";
 import { addTrailerVideo } from "../utils/moviesSlice";
 import { useEffect } from "react";
 
 const useMainBgVideo = (movieId) => {
+  const MainMovieVideo = useSelector((store) => store.movie.Trailer);
   const dispatch = useDispatch();
 
   const getMainMovieVideo = async () => {
@@ -25,7 +26,7 @@ const useMainBgVideo = (movieId) => {
   };
 
   useEffect(() => {
-    getMainMovieVideo();
+    !MainMovieVideo && getMainMovieVideo();
   }, []);
 };
 

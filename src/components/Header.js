@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { NETFLIX_LOGO, SUPPORTED_LANGUAGE } from "../utils/constants";
 import { showSearchPage } from "../utils/gptSearchSlice";
-import { changeLanguage } from "../utils/languageGptSearchSlice";
+import { changeLanguage } from "../utils/gptSearchLangSlice";
 
 const Header = () => {
   const navigate = useNavigate();
